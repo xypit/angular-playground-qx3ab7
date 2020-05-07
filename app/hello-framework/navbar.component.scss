@@ -1,0 +1,18 @@
+:host {
+  display: flex;
+  justify-content: flex-start;
+  flex-grow: 0;
+  color: #1976d2;
+  a {
+    padding: 10px;
+    margin: 10px;
+    text-decoration: none;
+    color: #1976d2;
+  }
+  a:hover {
+    font-weight: bold;  
+  }
+  #search {
+   flex-grow: 1 ;
+  }
+}

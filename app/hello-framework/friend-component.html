@@ -1,0 +1,8 @@
+<div>
+ <span class="close" (click)="close(friend.id)">X</span> 
+ <p>Name: {{friend.name}}</p>
+ <p>Surname: {{friend.surname}}</p>
+ <p>Age: {{friend.age}}</p>
+ <p>Gender: {{friend.gender}}</p>
+  <p *ngIf="friend.city">City: {{friend.city}}</p>
+</div>

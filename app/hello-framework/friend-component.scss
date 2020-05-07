@@ -1,0 +1,17 @@
+div {
+  border:1px solid silver;
+  padding: 10px;
+  margin:10px;
+  min-width: 200px;
+  min-height: 200px;
+  position: relative;
+  box-shadow: 5px 10px #888888;
+ }
+.close {
+  font-weight: bold;
+  color:red;
+  position:absolute;
+  right:10px;
+  top:10px;
+  cursor: pointer;
+}
