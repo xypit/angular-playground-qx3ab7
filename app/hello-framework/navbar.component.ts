@@ -30,11 +30,13 @@ export class NavBarComponent implements OnInit{
 
   searchBtn(){
     this.isSearchMode = !this.isSearchMode;
+    if(this.searchBtn){
+      this.reload.emit();
+    }
   }
 
   ngOnInit(){
     this.repo.search(this.criteria$).subscribe(d=> {
-      console.log("** Stream data ", d);
       this.repo.reload(d);
     });
   }

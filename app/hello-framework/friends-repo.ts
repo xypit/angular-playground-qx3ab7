@@ -18,16 +18,14 @@ export class FriendsRepo {
   }
 
   delete(id: number): void {
-    const idx = this.repo.findIndex(f => f.id === id )
+    const idx = this.repo.findIndex(f => f.id  === id )
     this.repo.splice(idx,  1);     
-    console.log("REPO IS " , this.repo);
   }
 
   reload(newData: Array<Friend>): void {
     if(newData){
       this.repo = newData;
     }else {
-      console.log("Repo reloading");
       this.repo = FRIENDS_DATA.slice();
     }
   }
