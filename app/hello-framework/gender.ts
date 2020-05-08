@@ -1,1 +1,1 @@
-export type Gender = 'male' | 'female';
+//TODO  - male or female

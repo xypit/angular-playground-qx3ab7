@@ -8,7 +8,6 @@ import { FriendsRepo } from './friends-repo';
   templateUrl: './friend-component.html',
 })
 export class FriendComponent {
-  @Input()
   friend: Friend;
 
   constructor(private repo: FriendsRepo){
@@ -16,7 +15,5 @@ export class FriendComponent {
   }
 
   close(id: number){
-    console.log("Closing " + id);
-    this.repo.delete(id);
   }
 }

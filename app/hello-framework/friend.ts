@@ -1,10 +1,5 @@
 import { Gender } from "./gender";
 
-export interface Friend {
-  id: number | void;
-  name: string;
-  surname: string;
-  age: number;
-  gender: Gender;
-  city?: string; 
-}
+//TODO - create interface Friend  to match objects in friends-repo.ts
+// city property is optional
+// Gender is a custom type and has either male or female value

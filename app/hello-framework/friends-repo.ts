@@ -1,4 +1,4 @@
-import { Injectable, ChangeDetectorRef, ApplicationRef } from "@angular/core";
+import { Injectable } from "@angular/core";
 import { Friend } from "./friend";
 import { FRIENDS_DATA } from "./friends-mock-data";
 import { Observable, of, from} from "rxjs";
@@ -10,8 +10,8 @@ import { debounceTime, distinctUntilChanged, switchMap } from 'rxjs/operators';
 export class FriendsRepo {
 
   private repo: Array<Friend>;
-  constructor( private cd: ApplicationRef){
-    this.reload(undefined);
+  constructor( ){
+    this.reload();
   }
   get data(): Array<Friend> {
     return this.repo;
@@ -23,25 +23,12 @@ export class FriendsRepo {
     console.log("REPO IS " , this.repo);
   }
 
-  reload(newData: Array<Friend>): void {
-    if(newData){
-      this.repo = newData;
-    }else {
-      console.log("Repo reloading");
-      this.repo = FRIENDS_DATA.slice();
-    }
+  reload() {
+      this.repo = FRIENDS_DATA;
   }
 
   search(query: Observable<string>){
-  return query.pipe(
-    debounceTime(300),
-    distinctUntilChanged(),
-    switchMap(q => this.filter(q))
-    )
+    return of([]);
   }
 
-  private filter(q: string):Observable<Friend[]> {
-      const data = this.repo.filter(f => f.name === q || f.surname === q || f.gender === q || f.city === q || f.age + "" === q );
-      return of(data);
-  }
 }

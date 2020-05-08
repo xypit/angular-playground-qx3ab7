@@ -1,6 +1,7 @@
 import { Friend } from "./friend";
 
-export const FRIENDS_DATA: Array<Friend> = [
+//TODO - add type for the collection
+export const FRIENDS_DATA = [
   {
     id: 1,
     name: 'Adam',
