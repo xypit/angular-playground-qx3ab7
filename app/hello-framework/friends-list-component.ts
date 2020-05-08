@@ -7,8 +7,9 @@ import { FriendsRepo } from './friends-repo';
   styleUrls: ['./friends-list-component.scss'],
   templateUrl: './friends-list-component.html',
 })
+
 export class FriendsListComponent {  
-  constructor(private friends: FriendsRepo) {
+  constructor() {
 
   }
 }

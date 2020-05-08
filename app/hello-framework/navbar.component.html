@@ -2,5 +2,4 @@
 <a href="#" (click)="newBtn()">New</a>
 <a href="#" (click)="searchBtn()">Search</a>
 <input 
-(keyup)="criteria$.next($event.target.value)"
-*ngIf="isSearchMode" id="search" placeholder="Type your query here...">
+(keyup)="criteria$.next($event.target.value)" placeholder="Type your query here...">

@@ -15,22 +15,6 @@ export class NavBarComponent implements OnInit{
   constructor(private repo: FriendsRepo){
 
   }
-  @Output()
-  readonly reload: EventEmitter<void> = new EventEmitter();
-  @Output()
-  readonly new : EventEmitter<void> = new EventEmitter();
-
-  reloadbtn(){
-    this.reload.emit();
-  }
-  newdbtn(){
-    this.new.emit();
-  }
-
-
-  searchBtn(){
-    this.isSearchMode = !this.isSearchMode;
-  }
 
   ngOnInit(){
     this.repo.search(this.criteria$).subscribe(d=> {

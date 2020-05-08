@@ -17,7 +17,6 @@ export class AppComponent {
     this.version += 1;
   }
   reload():void {
-    console.log("Reloading");
     this.repo.reload();
   }
 }
