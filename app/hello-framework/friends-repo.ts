@@ -18,30 +18,15 @@ export class FriendsRepo {
   }
 
   delete(id: number): void {
-    const idx = this.repo.findIndex(f => f.id === id )
-    this.repo.splice(idx,  1);     
-    console.log("REPO IS " , this.repo);
+    //TODO
   }
 
   reload(newData: Array<Friend>): void {
-    if(newData){
-      this.repo = newData;
-    }else {
-      console.log("Repo reloading");
       this.repo = FRIENDS_DATA.slice();
-    }
   }
 
   search(query: Observable<string>){
-  return query.pipe(
-    debounceTime(300),
-    distinctUntilChanged(),
-    switchMap(q => this.filter(q))
-    )
-  }
-
-  private filter(q: string):Observable<Friend[]> {
-      const data = this.repo.filter(f => f.name === q || f.surname === q || f.gender === q || f.city === q || f.age + "" === q );
-      return of(data);
+    //TODO
+    return of([]);
   }
 }

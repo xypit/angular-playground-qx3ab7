@@ -8,34 +8,13 @@ import { FriendsRepo } from './friends-repo';
   templateUrl: './navbar.component.html',
 })
 export class NavBarComponent implements OnInit{
-  isSearchMode = false;
-
+  
   criteria$ = new Subject<string>();
 
   constructor(private repo: FriendsRepo){
 
   }
-  @Output()
-  readonly reload: EventEmitter<void> = new EventEmitter();
-  @Output()
-  readonly new : EventEmitter<void> = new EventEmitter();
-
-  reloadbtn(){
-    this.reload.emit();
-  }
-  newdbtn(){
-    this.new.emit();
-  }
-
-
-  searchBtn(){
-    this.isSearchMode = !this.isSearchMode;
-  }
-
+  
   ngOnInit(){
-    this.repo.search(this.criteria$).subscribe(d=> {
-      console.log("** Stream data ", d);
-      this.repo.reload(d);
-    });
   }
 }
