@@ -4,9 +4,7 @@ import { FRIENDS_DATA } from "./friends-mock-data";
 import { Observable, of, from} from "rxjs";
 import { debounceTime, distinctUntilChanged, switchMap } from 'rxjs/operators';
 
-@Injectable({
-  providedIn: 'root'
-})
+//TODO - this should be a service
 export class FriendsRepo {
 
   private repo: Array<Friend>;
@@ -18,9 +16,6 @@ export class FriendsRepo {
   }
 
   delete(id: number): void {
-    const idx = this.repo.findIndex(f => f.id === id )
-    this.repo.splice(idx,  1);     
-    console.log("REPO IS " , this.repo);
   }
 
   reload() {
