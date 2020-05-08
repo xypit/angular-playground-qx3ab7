@@ -19,9 +19,7 @@ export class NavBarComponent implements OnInit{
   readonly reload: EventEmitter<void> = new EventEmitter();
   @Output()
   readonly new : EventEmitter<void> = new EventEmitter();
-  /*@Output()
-  readonly search : EventEmitter<void> = new EventEmitter();
- */
+
   reloadbtn(){
     this.reload.emit();
   }
@@ -32,7 +30,6 @@ export class NavBarComponent implements OnInit{
 
   searchBtn(){
     this.isSearchMode = !this.isSearchMode;
-    //this.search.emit();'
   }
 
   ngOnInit(){
